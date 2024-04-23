@@ -1,55 +1,28 @@
 <%- include('./partials/header') %>
-  <body>
-    <header>
-      <img id="logo" src="./assets/images/LogoMuskNite.png" alt="Logo" />
-      <nav>
-        <ul>
-          <li><a href="/mainpage">Home</a></li>
-          <li class="active"><a href="/deckpage">Deck</a></li>
-          <li><a href="/indexx">+Draw</a></li>
-        </ul>
-      </nav>
-      <a href="/landingpage" class="logout-button"
-        ><i class="fa-solid fa-right-from-bracket"></i
-      ></a>
-    </header>
-
-    <main>
-      <section id="gallery1" class="image-gallery">
-      <% for(card of cards) { %>      
+  <main>
+    <section id="gallery1" class="image-gallery">
+      <% for(card of cards) { %>
         <article class="image">
           <h2 class="card-amount-info">2/4</h2>
           <a href="/cardinfodetail">
-          <img
-            src= "<%= card.imageUrl%>"
-            alt="<%= card.name%>"
-          />
-        </a>
-        </article>        
+            <img src="<%= card.imageUrl%>" alt="<%= card.name%>" />
+          </a>
+        </article>
         <% } %>
-      </section>
+    </section>
 
-      <section class="pagination">
-      <li class="<%= currentPage == 1 ? 'disabled' : '' %>">
-      <a href="/page/<%= currentPage - 1 %>">&laquo; Previous</a>
-     </li>
-      <%for (var i = 1; i < totalPages; i++) {%>
-      <li class="<%= i == currentPage ? 'active' : '' %>">
-      <a href="/page/<%= i %>"><%= i %></a>
-      </li>
-      <% } %>
-      <li class="<%= currentPage == totalPages ? 'disabled' : '' %>">
-       <a href="/page/<%= currentPage + 1 %>">Next &raquo;</a>
-      </li>
-        <button id="prevBtn" disabled>Vorige</button>
-        <span id="page1" class="page-number active">1</span>
-        <span id="page2" class="page-number">2</span>
-        <span id="page3" class="page-number">3</span>
-        <button id="nextBtn">Volgende</button>
-      </section>
-     
-    </main>
-    <hr />
-   
+    <section class="pagination">
+
+
+      <button id="prevBtn" disabled>Vorige</button>
+      <span id="page1" class="page-number active">1</span>
+      <span id="page2" class="page-number">2</span>
+      <span id="page3" class="page-number">3</span>
+      <button id="nextBtn">Volgende</button>
+    </section>
+
+  </main>
+  <hr />
+
   </body>
-<%- include('./partials/footer') %>
+  <%- include('./partials/footer') %>

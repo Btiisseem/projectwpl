@@ -10,7 +10,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 app.get('/', (req, res) => {
-  res.render('landingpage'); 
+  res.render('index'); //landingpage
 });
 
 app.get('/login', (req, res) => {
@@ -21,28 +21,28 @@ app.get('/register', (req, res) => {
   res.render('register');
 });
 
-app.get('/mainpage', (req, res) => {
-  res.render('mainpage');
+app.get('/main', (req, res) => {
+  res.render('main');
 });
 
-app.get('/cardinfopage', (req, res) => {
-  res.render('cardinfopage');
+app.get('/cardinfo', (req, res) => {
+  res.render('cardinfo');
 });
 
-app.get('/cardinfodetailpage', (req, res) => {
-  res.render('cardinfodetailpage');
+app.get('/cardinfodetail', (req, res) => {
+  res.render('cardinfodetail');
 });
 
-app.get('/deckpage', (req, res) => {
-  res.render('deckpage');
+app.get('/decklist', (req, res) => {
+  res.render('decklist');
 });
 
-app.get('/deckdetailpage', (req, res) => {
-  res.render('deckdetailpage');
+app.get('/deckdetail', (req, res) => {
+  res.render('deckdetail');
 });
 
-app.get('/detailpage', (req, res) => {
-  res.render('detailpage');
+app.get('/detail', (req, res) => {
+  res.render('detail');
 });
 
 
